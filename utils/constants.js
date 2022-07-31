@@ -1,0 +1,24 @@
+/** this file contains all the constanst that we are used every where in the code */
+module.exports={
+    userType:{
+        customer:"CUSTOMER",
+        admin:"ADMIN",
+        engineer:"ENGINEER"
+    },
+    userStatus:{
+        pending:"PENDING",
+        approved:"APPROVED",
+        rejected:"REJECTED"
+    },
+    ticketStatus:{
+        open:"OPEN",
+        closed:"CLOSED",
+        blocked:"BLOCKED"
+    },
+    ticketPriority:{
+        one:1,
+        two:2,
+        three:3,
+        four:4
+    }
+}
