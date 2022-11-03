@@ -15,7 +15,8 @@ mongoose.connect(dbConfig.DB_URL,()=>{
     init()//for creating admin user
 })
 async function init(){
-    //protect multiple admin user creation we check if admin is present or not
+    //protect multiple admin user creation we check if admin is present or not because init method is called
+    // every time so we check if admin user is created then return that user else create admin user
     var user= await User.findOne({userId:"admin"})
     if(user){
         return// if user is present then return 
@@ -36,7 +37,12 @@ async function init(){
 require('./routes/auth.routes')(app)
 require('./routes/user.route')(app)
 require('./routes/ticket.routes')(app)
-/** start the server */
-app.listen(serverConfig.PORT,()=>{
+/**
+ * Start the express server,
+ * Need to export it so that it can be
+ * used by supertest for initiating a request
+ */
+
+module.exports=app.listen(serverConfig.PORT,()=>{
     console.log("Application has started on the post",serverConfig.PORT);
 })

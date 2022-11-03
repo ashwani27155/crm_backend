@@ -12,7 +12,7 @@ const objectConverter=require('../utils/objectConverter')//use for returning a c
 /** fetch the user based on their name userstatus and userType from query parameter */
 
 exports.findAll= async(req,res) =>{
-    const nameReq=req.query.name;
+const nameReq=req.query.name;
 const userTypeReq=req.query.userType;
 const userStatusReq=req.query.userStatus
 const mongoQueryobj={}//all query object are stored in a array

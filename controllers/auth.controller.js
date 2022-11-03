@@ -19,7 +19,7 @@ exports.signup= async(req,res)=>{
         userId:req.body.userId,
         email:req.body.email,
         userType:req.body.userType,
-        password:bcrypt.hash(req.body.password,8),
+        password:bcrypt.hashSync(req.body.password,8),
         userStatus:userStatus
     }
    /** Insert this new user to the database for this we need user model so we require user model*/
@@ -45,6 +45,7 @@ exports.signup= async(req,res)=>{
     })
   }
 }//end signup
+
 /** Controller for signin */            
 exports.signin=async (req,res)=>{
     //search the user if it exists
