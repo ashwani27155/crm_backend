@@ -78,7 +78,6 @@ exports.createTicket=async(req,res)=>{
     /**
      * I want to get the list of all the tickets
      */
-    console.log(req.userId);
     const queryObj = {};
     //check status of the ticket is present or not means ticket is open or closed state
     if (req.query.status != undefined) {
